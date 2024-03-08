@@ -1,0 +1,1 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/289faaaef7f20dcc705f/maintainability)](https://codeclimate.com/github/hendfull1/java-project-61/maintainability)
