@@ -3,3 +3,5 @@
 https://asciinema.org/connect/d1063191-bdbe-4803-b09c-3f728206a79a
 Аскинема - игры калькулятор
 https://asciinema.org/a/eja0hvftCUJM5LLpYx4UQnrv8
+Аскинем - НОД
+https://asciinema.org/a/nEXnYhXTCfeOfoK4qoTO9UoDd

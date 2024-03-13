@@ -5,132 +5,126 @@ public class Engine {
 
     //Общая логика
     //Рандом генератор
+    private static final Random random = new Random();
+    private static final Scanner scanner = new Scanner(System.in);
+
     public static int randomNumber(int min, int max) {
-        Random number = new Random();
-        return number.nextInt(min , max);
+        return random.nextInt(max - min) + min;
+    }
+
+    public static String getUserInput() {
+        return scanner.nextLine();
+    }
+
+    public static int getUserInputInt() {
+        return scanner.nextInt();
     }
 
     //Ввод ответа
-    public static String answerIsEven() {
-        Scanner scanner = new Scanner(System.in);
-        String answer = scanner.nextLine();
-        return answer;
-    }
 
     //Логика игры IsEven
-    public static void isCorrect(String answers , int number) {
-        var name = Cli.getName();
-        var wrongYes =  "'yes' is wrong answer ;(. Correct answer was 'no'";
-        var wrongNo = "'no' is wrong answer ;(. Correct answer was 'yes'";
-        if (answers.equals("yes") && number % 2 == 0) {
+    public static void isCorrect(String answer, int number) {
+        String name = Cli.getName();
+        if ((answer.equals("yes") && ((number % 2) == 0)) || (answer.equals("no") && ((number % 2) != 0))) {
             System.out.println("Correct!");
-        }
-        else if (answers.equals("no") && number % 2 != 0) {
-            System.out.println("Correct!");
-        }
-        else if (answers.equals("yes")){
-            System.out.println(wrongYes);
-            System.out.println("let's tru again, " + name);
-            System.exit(0);
-        }
-        else if (answers.equals("no")){
-            System.out.println(wrongNo);
-            System.out.println("let's tru again, " + name);
-            System.exit(0);
-        }
-        else {
-            System.out.println("Incorrect!");
-            System.out.println("let's tru again, " + name);
+        } else {
+            System.out.println(answer.equals("yes") ? "'yes' is wrong answer ;(. Correct answer was 'no'"
+                    : "'no' is wrong answer ;(. Correct answer was 'yes'");
+            System.out.println("Let's try again, " + name);
             System.exit(0);
         }
     }
 
     public static void gameIsEven(String[] args) {
-        var name = Cli.getName();
-        int numberOne = randomNumber(1 , 100);
-        int numberTwo = randomNumber(1 , 100);
-        int numberThree = randomNumber(1, 100);
+        String name = Cli.getName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        System.out.println("Question: " + numberOne);
-        var answerOne = answerIsEven();
-        isCorrect(answerOne , numberOne);
-        System.out.println("Question: " + numberTwo);
-        var answerTwo = answerIsEven();
-        isCorrect(answerTwo , numberTwo);
-        System.out.println("Question: " + numberThree);
-        var answerThree = answerIsEven();
-        isCorrect(answerThree , numberThree);
+        for (int i = 0; i < 3; i++) {
+            int number = randomNumber(1, 100);
+            System.out.println("Question: " + number);
+            String answer = getUserInput();
+            isCorrect(answer, number);
+        }
         System.out.println("Congratulations, " + name + "!");
     }
 
     // Калькулятор
-    public static int answerCalc() {
-        Scanner scanner = new Scanner(System.in);
-        int answer = scanner.nextInt();
-        return answer;
-    }
-    private static String operation = "";
-    private static int trueAnswer = 0;
-    public static void calc(String[] args) {
-        // 1 - +; 2 - -; 3 - *;
-        var numberOfOperation = randomNumber(1 , 4);
-        var firstNumber = randomNumber(1 , 100);
-        var secondNumber = randomNumber(1 , 100);
-        if (numberOfOperation == 1) {
-            trueAnswer = firstNumber + secondNumber;
-            operation = firstNumber + " + " + secondNumber;
-        }
-        if (numberOfOperation == 2) {
-            trueAnswer = firstNumber - secondNumber;
-            operation = firstNumber + " - " + secondNumber;
-        }
-        if (numberOfOperation == 3) {
-            trueAnswer = firstNumber * secondNumber;
-            operation = firstNumber + " * " + secondNumber;
-        }
-    }
 
     public static void gameCalc(String[] args) {
         var name = Cli.getName();
         System.out.println("What is the result of the expression?");
 
-        //первый вопрос
-        calc(args);
-        System.out.println("Question: " + operation);
-        var answerOne = answerCalc();
-        if (answerOne == trueAnswer) {
-            System.out.println("Correct!");
+        for (int i = 0; i < 3; i++) {
+            int firstNumber = randomNumber(1, 100);
+            int secondNumber = randomNumber(1, 100);
+            int operation = randomNumber(1, 4);
+            int trueAnswer = 0;
+            String operationSymbol = "";
+            switch (operation) {
+                case 1:
+                    trueAnswer = firstNumber + secondNumber;
+                    operationSymbol = " + ";
+                    break;
+                case 2:
+                    trueAnswer = firstNumber - secondNumber;
+                    operationSymbol = " - ";
+                    break;
+                case 3:
+                    trueAnswer = firstNumber * secondNumber;
+                    operationSymbol = " * ";
+                    break;
+            }
+            System.out.println("Question: " + firstNumber + operationSymbol + secondNumber);
+            int answer = getUserInputInt();
+            if (answer == trueAnswer) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println(answer + " is wrong answer ;(. Correct answer was " + trueAnswer);
+                System.out.println("Let's try again, " + name);
+                System.exit(0);
+            }
         }
-        else {
-            System.out.println(answerOne + " is wrong answer ;(. Correct answer was " + trueAnswer);
-            System.out.println("let's try again, " + name);
-            System.exit(0);
-        }
+        System.out.println("Congratulations, " + name);
+    }
 
-        // второй вопрос
-        calc(args);
-        System.out.println("Question: " + operation);
-        var answerTwo = answerCalc();
-        if (answerTwo == trueAnswer) {
-            System.out.println("Correct!");
+    public static int GCD(int firstNumber, int secondNumber) {
+        if (secondNumber == firstNumber) {
+            return secondNumber;
+        }
+        else if (firstNumber > secondNumber) {
+            while (secondNumber != 0) {
+                int temp = secondNumber;
+                secondNumber = firstNumber % secondNumber;
+                firstNumber = temp;
+            }
+        return firstNumber;
         }
         else {
-            System.out.println(answerTwo + " is wrong answer ;(. Correct answer was " + trueAnswer);
-            System.out.println("let's try again, " + name);
-            System.exit(0);
+            while (firstNumber != 0) {
+                int temp = firstNumber;
+                firstNumber = secondNumber % firstNumber;
+                secondNumber = temp;
+            }
+        return secondNumber;
         }
-
-        //Третий вопрос
-        calc(args);
-        System.out.println("Question: " + operation);
-        var answerThree = answerCalc();
-        if (answerThree == trueAnswer) {
-            System.out.println("Congratulations, " + name + "!");
+    }
+    public static void gameGCD(String[] args) {
+        var name = Cli.getName();
+        System.out.println("Find the greatest common divisor of given numbers.");
+        for (var i = 0; i < 3; i++) {
+            int firstNumber = randomNumber(1 , 51);
+            int secondNumber = randomNumber(1, 51);
+            int trueAnswer = Engine.GCD(firstNumber, secondNumber);
+            System.out.println("Question: " + firstNumber + " " + secondNumber);
+            int answer = getUserInputInt();
+            if (answer == trueAnswer) {
+                System.out.println("Correct");
+            }
+            else {
+                System.out.println(answer + " is wrong answer ;(. Correct answer was " + trueAnswer);
+                System.out.println("Let's try again, " + name);
+                System.exit(0);
+            }
         }
-        else {
-            System.out.println(answerThree + " is wrong answer ;(. Correct answer was " + trueAnswer);
-            System.out.println("let's try again, " + name);
-            System.exit(0);
-        }
+        System.out.println("Congratulations, " + name);
     }
 }
