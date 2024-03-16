@@ -1,4 +1,5 @@
 package hexlet.code;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 public class Engine {
@@ -41,6 +42,7 @@ public class Engine {
         for (int i = 0; i < 3; i++) {
             int number = randomNumber(1, 100);
             System.out.println("Question: " + number);
+            System.out.print("Your answer: ");
             String answer = getUserInput();
             isCorrect(answer, number);
         }
@@ -74,6 +76,7 @@ public class Engine {
                     break;
             }
             System.out.println("Question: " + firstNumber + operationSymbol + secondNumber);
+            System.out.print("Your answer: ");
             int answer = getUserInputInt();
             if (answer == trueAnswer) {
                 System.out.println("Correct!");
@@ -115,12 +118,49 @@ public class Engine {
             int secondNumber = randomNumber(1, 51);
             int trueAnswer = Engine.GCD(firstNumber, secondNumber);
             System.out.println("Question: " + firstNumber + " " + secondNumber);
+            System.out.print("Your answer: ");
             int answer = getUserInputInt();
             if (answer == trueAnswer) {
                 System.out.println("Correct");
             }
             else {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + trueAnswer);
+                System.out.println("Let's try again, " + name);
+                System.exit(0);
+            }
+        }
+        System.out.println("Congratulations, " + name);
+    }
+
+    // Прогрессия
+    public static void gameProgression(String[] args) {
+        var name = Cli.getName();
+        System.out.println("What number is missing in the progression?");
+        for(var i = 0; i < 3; i++) {
+            int[] progression = new int[randomNumber(5, 15)];
+            int firstNumber = randomNumber(1, 10);
+            int progressionNumber = randomNumber(1, 10);
+            progression[0] = firstNumber;
+            for (var j = 1; j < progression.length; j++) {
+                progression[j] = progression[j - 1] + progressionNumber;
+            }
+            int numberMissed = randomNumber(5, progression.length);
+            int correctNumber = progression[numberMissed];
+            String[] progressionString = new String[progression.length];
+            for (int l = 0; l < progressionString.length; l++) {
+                progressionString[l] = String.valueOf(progression[l]);
+            }
+            progressionString[numberMissed] = "..";
+            String progressionOutput = String.join(", ", progressionString);
+            progressionOutput = progressionOutput.replace(",", "");
+            System.out.println(progressionOutput);
+            System.out.print("Your answer: ");
+            int answer = getUserInputInt();
+            if (answer == correctNumber) {
+                System.out.println("Correct!");
+            }
+            else {
+                System.out.println(answer + " is wrong anwser ;(. Correct answer was " + correctNumber);
                 System.out.println("Let's try again, " + name);
                 System.exit(0);
             }

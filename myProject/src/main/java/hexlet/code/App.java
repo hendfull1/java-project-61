@@ -9,6 +9,7 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         int numberGame = game.nextInt();
         System.out.println("Your choice: " + numberGame);
@@ -26,6 +27,11 @@ public class App {
             System.out.println("Welcome to the Brain Games");
             Cli.cli(args);
             Engine.gameGCD(args);
+        }
+        if (numberGame == 5) {
+            System.out.println("Welcome to the Brain Games");
+            Cli.cli(args);
+            Engine.gameProgression(args);
         }
     }
 }
