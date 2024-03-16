@@ -144,7 +144,7 @@ public class Engine {
             for (var j = 1; j < progression.length; j++) {
                 progression[j] = progression[j - 1] + progressionNumber;
             }
-            int numberMissed = randomNumber(5, progression.length);
+            int numberMissed = randomNumber(5, progression.length - 1);
             int correctNumber = progression[numberMissed];
             String[] progressionString = new String[progression.length];
             for (int l = 0; l < progressionString.length; l++) {
