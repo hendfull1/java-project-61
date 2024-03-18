@@ -132,7 +132,7 @@ public class Engine {
         var name = Cli.getName();
         System.out.println("What number is missing in the progression?");
         for (var i = 0; i < 3; i++) {
-            int[] progression = new int[randomNumber(5, 15)];
+            int[] progression = new int[randomNumber(6, 15)];
             int firstNumber = randomNumber(1, 10);
             int progressionNumber = randomNumber(1, 10);
             progression[0] = firstNumber;
