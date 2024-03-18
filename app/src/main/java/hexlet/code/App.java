@@ -27,7 +27,7 @@ public class App {
         if (numberGame == 4) {
             System.out.println("Welcome to the Brain Games");
             Cli.cli(args);
-            Engine.gameGCD(args);
+            Engine.gameGcd(args);
         }
         if (numberGame == 5) {
             System.out.println("Welcome to the Brain Games");
