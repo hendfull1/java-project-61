@@ -20,8 +20,6 @@ public class Engine {
         return SCANNER.nextInt();
     }
 
-    //Ввод ответа
-
     //Логика игры IsEven
     public static void isCorrect(String answer, int number) {
         String name = Cli.getName();
@@ -30,7 +28,7 @@ public class Engine {
         } else {
             System.out.println(answer.equals("yes") ? "'yes' is wrong answer ;(. Correct answer was 'no'"
                     : "'no' is wrong answer ;(. Correct answer was 'yes'");
-            System.out.println("Let's try again, " + name);
+            System.out.println("Let's try again, " + name + "!");
             System.exit(0);
         }
     }
@@ -81,13 +79,14 @@ public class Engine {
                 System.out.println("Correct!");
             } else {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + trueAnswer);
-                System.out.println("Let's try again, " + name);
+                System.out.println("Let's try again, " + name + "!");
                 System.exit(0);
             }
         }
-        System.out.println("Congratulations, " + name);
+        System.out.println("Congratulations, " + name + "!");
     }
 
+    // НОД
     public static int gcd(int firstNumber, int secondNumber) {
         if (secondNumber == firstNumber) {
             return secondNumber;
@@ -121,11 +120,11 @@ public class Engine {
                 System.out.println("Correct");
             } else {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + trueAnswer);
-                System.out.println("Let's try again, " + name);
+                System.out.println("Let's try again, " + name + "!");
                 System.exit(0);
             }
         }
-        System.out.println("Congratulations, " + name);
+        System.out.println("Congratulations, " + name + "!");
     }
 
     // Прогрессия
@@ -156,11 +155,11 @@ public class Engine {
                 System.out.println("Correct!");
             } else {
                 System.out.println(answer + " is wrong anwser ;(. Correct answer was " + correctNumber);
-                System.out.println("Let's try again, " + name);
+                System.out.println("Let's try again, " + name + "!");
                 System.exit(0);
             }
         }
-        System.out.println("Congratulations, " + name);
+        System.out.println("Congratulations, " + name + "!");
     }
 
     public static boolean isPrime(int number) {
@@ -184,14 +183,14 @@ public class Engine {
                 System.out.println("Correct!");
             } else if (answer.equals("yes")) {
                 System.out.println("'yes' is wrong answer ;(, correct answer was 'no'");
-                System.out.println("Let's try again, " + name);
+                System.out.println("Let's try again, " + name + "!");
                 System.exit(0);
             } else {
                 System.out.println("'no' is wrong answer ;(, correct answer was 'yes'");
-                System.out.println("Let's try again, " + name);
+                System.out.println("Let's try again, " + name + "!");
                 System.exit(0);
             }
         }
-        System.out.println("Congratulations, " + name);
+        System.out.println("Congratulations, " + name + "!");
     }
 }
