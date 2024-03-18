@@ -1,5 +1,4 @@
 package hexlet.code;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 public class Engine {
@@ -161,6 +160,40 @@ public class Engine {
             }
             else {
                 System.out.println(answer + " is wrong anwser ;(. Correct answer was " + correctNumber);
+                System.out.println("Let's try again, " + name);
+                System.exit(0);
+            }
+        }
+        System.out.println("Congratulations, " + name);
+    }
+
+    public static boolean isPrime(int number) {
+        for(var i = 2; i < number; i++) {
+            if(number % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void gamePrime(String[] args) {
+        var name = Cli.getName();
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        for(var i = 0; i < 3; i++) {
+            int number = randomNumber(1, 100);
+            System.out.println("Question: " + number);
+            var answer = getUserInput();
+            var trueAnswer = Engine.isPrime(number);
+            System.out.println("Your answer: " + answer);
+            if((answer.equals("yes") && trueAnswer) || (answer.equals("no") && !trueAnswer)) {
+                System.out.println("Correct!");
+            }
+            else if (answer.equals("yes")) {
+                System.out.println("'yes' is wrong answer ;(, correct answer was 'no'");
+                System.out.println("Let's try again, " + name);
+                System.exit(0);
+            }
+            else {
+                System.out.println("'no' is wrong answer ;(, correct answer was 'yes'");
                 System.out.println("Let's try again, " + name);
                 System.exit(0);
             }
