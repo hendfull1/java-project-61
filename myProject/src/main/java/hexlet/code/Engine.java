@@ -59,21 +59,21 @@ public class Engine {
             int secondNumber = randomNumber(1, 100);
             int operation = randomNumber(1, 4);
             int trueAnswer = 0;
-            String operationSymbol = "";
-            switch (operation) {
-                case 1:
+            String operationSymbol = switch (operation) {
+                case 1 -> {
                     trueAnswer = firstNumber + secondNumber;
-                    operationSymbol = " + ";
-                    break;
-                case 2:
+                    yield " + ";
+                }
+                case 2 -> {
                     trueAnswer = firstNumber - secondNumber;
-                    operationSymbol = " - ";
-                    break;
-                case 3:
+                    yield " - ";
+                }
+                case 3 -> {
                     trueAnswer = firstNumber * secondNumber;
-                    operationSymbol = " * ";
-                    break;
-            }
+                    yield " * ";
+                }
+                default -> "";
+            };
             System.out.println("Question: " + firstNumber + operationSymbol + secondNumber);
             System.out.print("Your answer: ");
             int answer = getUserInputInt();
