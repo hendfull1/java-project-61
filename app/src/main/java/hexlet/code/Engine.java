@@ -138,14 +138,16 @@ public class Engine {
         for (var i = 0; i < gamesLong; i++) {
             var minlLong = 6;
             var maxLong = 15;
+            var startNumber = 1;
+            var endNumber = 10;
             int[] progression = new int[randomNumber(minlLong, maxLong)];
-            int firstNumber = randomNumber(minlLong, maxLong);
+            int firstNumber = randomNumber(startNumber, endNumber);
             int progressionNumber = randomNumber(startGenerate, endGenerate);
             progression[0] = firstNumber;
             for (var j = 1; j < progression.length; j++) {
                 progression[j] = progression[j - 1] + progressionNumber;
             }
-            int numberMissed = randomNumber(minlLong - 1, progression.length - 1);
+            int numberMissed = (progression.length > minlLong) ? randomNumber(minlLong , progression.length - 1) : randomNumber(minlLong - 1, progression.length);
             int correctNumber = progression[numberMissed];
             String[] progressionString = new String[progression.length];
             for (int l = 0; l < progressionString.length; l++) {
