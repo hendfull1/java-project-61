@@ -5,19 +5,19 @@ public class Engine {
 
     //Общая логика
     //Рандом генератор
-    private static final Random Random = new Random();
-    private static final Scanner Scanner = new Scanner(System.in);
+    private static final Random RANDOM = new Random();
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static int randomNumber(int min, int max) {
-        return Random.nextInt(max - min) + min;
+        return RANDOM.nextInt(max - min) + min;
     }
 
     public static String getUserInput() {
-        return Scanner.nextLine();
+        return SCANNER.nextLine();
     }
 
     public static int getUserInputInt() {
-        return Scanner.nextInt();
+        return SCANNER.nextInt();
     }
 
     //Ввод ответа
@@ -133,7 +133,7 @@ public class Engine {
         var name = Cli.getName();
         System.out.println("What number is missing in the progression?");
         for (var i = 0; i < 3; i++) {
-            int [] progression = new int[randomNumber(5, 15)];
+            int[] progression = new int[randomNumber(5, 15)];
             int firstNumber = randomNumber(1, 10);
             int progressionNumber = randomNumber(1, 10);
             progression[0] = firstNumber;
@@ -164,7 +164,7 @@ public class Engine {
     }
 
     public static boolean isPrime(int number) {
-        for(var i = 2; i < number; i++) {
+        for (var i = 2; i < number; i++) {
             if (number % i == 0) {
                 return false;
             }
