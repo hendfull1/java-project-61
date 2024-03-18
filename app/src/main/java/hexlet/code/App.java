@@ -2,14 +2,15 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
+    private static final int greet = 1;
+    private static final int even = 2;
+    private static final int calc = 3;
+    private static final int gcd = 4;
+    private static final int progression = 5;
+    private static final int prime = 6;
+
     public static void main(String[] args) {
         Scanner game = new Scanner(System.in);
-        var greet = 1;
-        var even = 2;
-        var calc = 3;
-        var gcd = 4;
-        var progression = 5;
-        var prime = 6;
         System.out.println("Please enter the game and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
