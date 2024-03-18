@@ -14,6 +14,10 @@ public class App {
         System.out.println("0 - Exit");
         int numberGame = game.nextInt();
         System.out.println("Your choice: " + numberGame);
+        if (numberGame == 1) {
+            System.out.println("Welcome to the Brain Games");
+            Cli.cli(args);
+        }
         if (numberGame == 2) {
             System.out.println("Welcome to the Brain Games");
             Cli.cli(args);
