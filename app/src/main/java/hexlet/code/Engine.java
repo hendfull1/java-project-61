@@ -148,7 +148,7 @@ public class Engine {
             progressionString[numberMissed] = "..";
             String progressionOutput = String.join(", ", progressionString);
             progressionOutput = progressionOutput.replace(",", "");
-            System.out.println(progressionOutput);
+            System.out.println("Question: " + progressionOutput);
             System.out.print("Your answer: ");
             int answer = getUserInputInt();
             if (answer == correctNumber) {
