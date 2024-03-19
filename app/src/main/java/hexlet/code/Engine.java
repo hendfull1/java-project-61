@@ -27,7 +27,13 @@ public class Engine {
     private static final int OPERATIONS_COUNT = 4;
     private static final int MIN_PROGRESS_LENGTH = 6;
     private static final int MAX_PROGRESS_LENGTH = 15;
-    private static final int OPERATION = randomNumber(MIN_GENERATE, OPERATIONS_COUNT);
+    //идентификатор сложения
+    private static final int ADDITION = 1;
+    //идентификатор вычитания
+    private static final int SUBTRACTION = 2;
+    //идентификатор умножения
+    private static final int MULTIPLICATION = 3;
+
 
     //Логика игры IsEven
     public static void isCorrect(String answer, int number) {
@@ -65,16 +71,17 @@ public class Engine {
             int firstNumber = randomNumber(MIN_GENERATE, MAX_GENERATE);
             int secondNumber = randomNumber(MIN_GENERATE, MAX_GENERATE);
             int trueAnswer = 0;
-            String operationSymbol = switch (OPERATION) {
-                case 1 -> {
+            int operation = randomNumber(MIN_GENERATE, OPERATIONS_COUNT);
+            String operationSymbol = switch (operation) {
+                case ADDITION -> {
                     trueAnswer = firstNumber + secondNumber;
                     yield " + ";
                 }
-                case 2 -> {
+                case SUBTRACTION -> {
                     trueAnswer = firstNumber - secondNumber;
                     yield " - ";
                 }
-                case 3 -> {
+                case MULTIPLICATION -> {
                     trueAnswer = firstNumber * secondNumber;
                     yield " * ";
                 }
