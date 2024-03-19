@@ -23,32 +23,32 @@ public class App {
         System.out.println("Your choice: " + numberGame);
         if (numberGame == GREET) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.cli(args);
+            Cli.cli();
         }
         if (numberGame == EVEN) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.cli(args);
-            Engine.gameIsEven(args);
+            Cli.cli();
+            Engine.gameIsEven();
         }
         if (numberGame == CALC) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.cli(args);
-            Engine.gameCalc(args);
+            Cli.cli();
+            Engine.gameCalc();
         }
         if (numberGame == GCD) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.cli(args);
-            Engine.gameGcd(args);
+            Cli.cli();
+            Engine.gameGcd();
         }
         if (numberGame == PROGRESSION) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.cli(args);
-            Engine.gameProgression(args);
+            Cli.cli();
+            Engine.gameProgression();
         }
         if (numberGame == PRIME) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.cli(args);
-            Engine.gamePrime(args);
+            Cli.cli();
+            Engine.gamePrime();
         }
     }
 }

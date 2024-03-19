@@ -48,7 +48,7 @@ public class Engine {
         }
     }
 
-    public static void gameIsEven(String[] args) {
+    public static void gameIsEven() {
         String name = Cli.getName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < GAME_LENGTH; i++) {
@@ -63,7 +63,7 @@ public class Engine {
 
     // Калькулятор
 
-    public static void gameCalc(String[] args) {
+    public static void gameCalc() {
         var name = Cli.getName();
         System.out.println("What is the result of the expression?");
 
@@ -121,7 +121,7 @@ public class Engine {
             return firstNumber;
         }
     }
-    public static void gameGcd(String[] args) {
+    public static void gameGcd() {
         var name = Cli.getName();
         System.out.println("Find the greatest common divisor of given numbers.");
         for (var i = 0; i < GAME_LENGTH; i++) {
@@ -143,7 +143,7 @@ public class Engine {
     }
 
     // Прогрессия
-    public static void gameProgression(String[] args) {
+    public static void gameProgression() {
         var name = Cli.getName();
         System.out.println("What number is missing in the progression?");
         for (var i = 0; i < GAME_LENGTH; i++) {
@@ -185,7 +185,7 @@ public class Engine {
         }
         return true;
     }
-    public static void gamePrime(String[] args) {
+    public static void gamePrime() {
         var name = Cli.getName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         for (var i = 0; i < GAME_LENGTH; i++) {

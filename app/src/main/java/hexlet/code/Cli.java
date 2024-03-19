@@ -5,7 +5,7 @@ public class Cli {
 
     private static String userName;
 
-    public static void cli(String[] args) {
+    public static void cli() {
         System.out.println("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         userName = scanner.nextLine();
