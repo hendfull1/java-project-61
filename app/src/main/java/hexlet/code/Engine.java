@@ -19,12 +19,15 @@ public class Engine {
     public static int getUserInputInt() {
         return SCANNER.nextInt();
     }
-    private static final int gameLength = 3;
-    private static final int minGenerate = 1;
-    private static final int maxGenerate = 100;
-    private static final int operationsCount = 4;
-    private static final int minProgressLength = 6;
-    private static final int maxProgressLength = 15;
+
+    // Поправить имена
+    private static final int GAME_LENGTH = 3;
+    private static final int MIN_GENERATE = 1;
+    private static final int MAX_GENERATE = 100;
+    private static final int OPERATIONS_COUNT = 4;
+    private static final int MIN_PROGRESS_LENGTH = 6;
+    private static final int MAX_PROGRESS_LENGTH = 15;
+    private static final int OPERATION = randomNumber(MIN_GENERATE, OPERATIONS_COUNT);
 
     //Логика игры IsEven
     public static void isCorrect(String answer, int number) {
@@ -42,8 +45,8 @@ public class Engine {
     public static void gameIsEven(String[] args) {
         String name = Cli.getName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        for (int i = 0; i < gameLength; i++) {
-            int number = randomNumber(minGenerate, maxGenerate);
+        for (int i = 0; i < GAME_LENGTH; i++) {
+            int number = randomNumber(MIN_GENERATE, MAX_GENERATE);
             System.out.println("Question: " + number);
             System.out.print("Your answer: ");
             String answer = getUserInput();
@@ -58,12 +61,11 @@ public class Engine {
         var name = Cli.getName();
         System.out.println("What is the result of the expression?");
 
-        for (int i = 0; i < gameLength; i++) {
-            int firstNumber = randomNumber(minGenerate, maxGenerate);
-            int secondNumber = randomNumber(minGenerate, maxGenerate);
-            int operation = randomNumber(minGenerate, operationsCount);
+        for (int i = 0; i < GAME_LENGTH; i++) {
+            int firstNumber = randomNumber(MIN_GENERATE, MAX_GENERATE);
+            int secondNumber = randomNumber(MIN_GENERATE, MAX_GENERATE);
             int trueAnswer = 0;
-            String operationSymbol = switch (operation) {
+            String operationSymbol = switch (OPERATION) {
                 case 1 -> {
                     trueAnswer = firstNumber + secondNumber;
                     yield " + ";
@@ -115,9 +117,9 @@ public class Engine {
     public static void gameGcd(String[] args) {
         var name = Cli.getName();
         System.out.println("Find the greatest common divisor of given numbers.");
-        for (var i = 0; i < gameLength; i++) {
-            int firstNumber = randomNumber(minGenerate, maxGenerate);
-            int secondNumber = randomNumber(minGenerate, maxGenerate);
+        for (var i = 0; i < GAME_LENGTH; i++) {
+            int firstNumber = randomNumber(MIN_GENERATE, MAX_GENERATE);
+            int secondNumber = randomNumber(MIN_GENERATE, MAX_GENERATE);
             int trueAnswer = Engine.gcd(firstNumber, secondNumber);
             System.out.println("Question: " + firstNumber + " " + secondNumber);
             System.out.print("Your answer: ");
@@ -137,10 +139,10 @@ public class Engine {
     public static void gameProgression(String[] args) {
         var name = Cli.getName();
         System.out.println("What number is missing in the progression?");
-        for (var i = 0; i < gameLength; i++) {
-            int[] progression = new int[randomNumber(minProgressLength, maxProgressLength)];
-            int firstNumber = randomNumber(minGenerate, maxGenerate);
-            int progressionNumber = randomNumber(minGenerate, maxGenerate);
+        for (var i = 0; i < GAME_LENGTH; i++) {
+            int[] progression = new int[randomNumber(MIN_PROGRESS_LENGTH, MAX_PROGRESS_LENGTH)];
+            int firstNumber = randomNumber(MIN_GENERATE, MAX_GENERATE);
+            int progressionNumber = randomNumber(MIN_GENERATE, MAX_GENERATE);
             progression[0] = firstNumber;
             for (var j = 1; j < progression.length; j++) {
                 progression[j] = progression[j - 1] + progressionNumber;
@@ -179,8 +181,8 @@ public class Engine {
     public static void gamePrime(String[] args) {
         var name = Cli.getName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        for (var i = 0; i < gameLength; i++) {
-            int number = randomNumber(minGenerate, maxGenerate);
+        for (var i = 0; i < GAME_LENGTH; i++) {
+            int number = randomNumber(MIN_GENERATE, MAX_GENERATE);
             System.out.println("Question: " + number);
             var answer = getUserInput();
             var trueAnswer = Engine.isPrime(number);

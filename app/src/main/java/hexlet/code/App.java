@@ -2,12 +2,12 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
-    private static final int greet = 1;
-    private static final int even = 2;
-    private static final int calc = 3;
-    private static final int gcd = 4;
-    private static final int progression = 5;
-    private static final int prime = 6;
+    private static final int GREET = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
 
     public static void main(String[] args) {
         Scanner game = new Scanner(System.in);
@@ -21,31 +21,31 @@ public class App {
         System.out.println("0 - Exit");
         int numberGame = game.nextInt();
         System.out.println("Your choice: " + numberGame);
-        if (numberGame == greet) {
+        if (numberGame == GREET) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli(args);
         }
-        if (numberGame == even) {
+        if (numberGame == EVEN) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli(args);
             Engine.gameIsEven(args);
         }
-        if (numberGame == calc) {
+        if (numberGame == CALC) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli(args);
             Engine.gameCalc(args);
         }
-        if (numberGame == gcd) {
+        if (numberGame == GCD) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli(args);
             Engine.gameGcd(args);
         }
-        if (numberGame == progression) {
+        if (numberGame == PROGRESSION) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli(args);
             Engine.gameProgression(args);
         }
-        if (numberGame == prime) {
+        if (numberGame == PRIME) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli(args);
             Engine.gamePrime(args);
