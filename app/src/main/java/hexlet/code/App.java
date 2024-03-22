@@ -28,27 +28,27 @@ public class App {
         if (numberGame == EVEN) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli();
-            Engine.gameIsEven();
+            IsEven.gameIsEven();
         }
         if (numberGame == CALC) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli();
-            Engine.gameCalc();
+            Calc.gameCalc();
         }
         if (numberGame == GCD) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli();
-            Engine.gameGcd();
+            Gcd.gameGcd();
         }
         if (numberGame == PROGRESSION) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli();
-            Engine.gameProgression();
+            Progression.gameProgression();
         }
         if (numberGame == PRIME) {
             System.out.println("Welcome to the Brain Games!");
             Cli.cli();
-            Engine.gamePrime();
+            IsPrime.gamePrime();
         }
     }
 }
