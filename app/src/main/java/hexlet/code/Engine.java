@@ -14,9 +14,6 @@ public class Engine {
         return SCANNER.nextLine();
     }
 
-    public static int getUserInputInt() {
-        return SCANNER.nextInt();
-    }
 
     public static void game(Object[][] numbers, String question) {
         System.out.println("Welcome to the Brain Games!");
