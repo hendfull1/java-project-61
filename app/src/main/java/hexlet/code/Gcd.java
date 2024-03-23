@@ -2,23 +2,12 @@ package hexlet.code;
 
 public class Gcd {
     public static int gcd(int firstNumber, int secondNumber) {
-        if (secondNumber == firstNumber) {
-            return secondNumber;
-        } else if (firstNumber <= secondNumber) {
-            while (firstNumber != 0) {
-                int temp = firstNumber;
-                firstNumber = secondNumber % firstNumber;
-                secondNumber = temp;
-            }
-            return secondNumber;
-        } else {
-            while (secondNumber != 0) {
-                int temp = secondNumber;
-                secondNumber = firstNumber % secondNumber;
-                firstNumber = temp;
-            }
-            return firstNumber;
+        while (secondNumber != 0) {
+            int temp = secondNumber;
+            secondNumber = firstNumber % secondNumber;
+            firstNumber = temp;
         }
+        return firstNumber;
     }
 
     public static String getQuestion() {
