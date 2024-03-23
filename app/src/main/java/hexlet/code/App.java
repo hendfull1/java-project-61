@@ -9,8 +9,7 @@ public class App {
     private static final int PROGRESSION = 5;
     private static final int PRIME = 6;
 
-    public static void main(String[] args) {
-        Scanner game = new Scanner(System.in);
+    public static void choice() {
         System.out.println("Please enter the game and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -19,6 +18,11 @@ public class App {
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
+    }
+
+    public static void main(String[] args) {
+        Scanner game = new Scanner(System.in);
+        choice();
         int numberGame = game.nextInt();
         System.out.println("Your choice: " + numberGame);
         if (numberGame == GREET) {
