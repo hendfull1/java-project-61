@@ -27,6 +27,7 @@ public class App {
         System.out.println("Your choice: " + numberGame);
         if (numberGame == GREET) {
             System.out.println("Welcome to the Brain Games!");
+            // Оставил Cli только тут
             Cli.cli();
         }
         if (numberGame == EVEN) {
