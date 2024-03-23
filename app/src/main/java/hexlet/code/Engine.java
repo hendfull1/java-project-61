@@ -31,7 +31,7 @@ public class Engine {
                 System.out.print("Your answer: ");
                 answer = Integer.parseInt(getUserInput());
             }
-            if (answer.equals(numbers[i][1])){
+            if (answer.equals(numbers[i][1])) {
                 System.out.println("Correct!");
             } else {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + numbers[i][1]);

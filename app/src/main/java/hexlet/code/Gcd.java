@@ -26,13 +26,13 @@ public class Gcd {
     }
 
     public static void gameGcd() {
-        Object[][] GcdArrays = new Object[Engine.getGameLength()][2];
+        Object[][] gcdArrays = new Object[Engine.getGameLength()][2];
         for (var i = 0; i < Engine.getGameLength(); i++) {
             int firstNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
             int secondNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
-            GcdArrays[i][0] = firstNumber + " " + secondNumber;
-            GcdArrays[i][1] = gcd(firstNumber, secondNumber);
-            }
-        Engine.game(GcdArrays, getQuestion());
+            gcdArrays[i][0] = firstNumber + " " + secondNumber;
+            gcdArrays[i][1] = gcd(firstNumber, secondNumber);
+        }
+        Engine.game(gcdArrays, getQuestion());
     }
 }

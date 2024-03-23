@@ -17,7 +17,7 @@ public class IsPrime {
         Object[][] numbers = new Object[Engine.getGameLength()][2];
         for (var i = 0; i < Engine.getGameLength(); i++) {
             numbers[i][0] = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
-            numbers[i][1] = IsPrime.isPrime((Integer)numbers[i][0]);
+            numbers[i][1] = IsPrime.isPrime((Integer) numbers[i][0]);
         }
         Engine.game(numbers, getQuestion());
     }
