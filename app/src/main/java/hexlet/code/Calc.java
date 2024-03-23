@@ -1,11 +1,19 @@
 package hexlet.code;
 public class Calc {
+
+    //идентификатор сложения
+    public static final int ADDITION = 1;
+    //идентификатор вычитания
+    public static final int SUBTRACTION = 2;
+    //идентификатор умножения
+    public static final int MULTIPLICATION = 3;
+    private static final int OPERATIONS_COUNT = 4;
     public static String getOperation() {
-        int operation = Engine.randomNumber(Engine.getMinGenerate(), Engine.getOperationsCount());
+        int operation = Engine.randomNumber(Engine.getMinGenerate(), OPERATIONS_COUNT);
         return switch (operation) {
-            case Engine.ADDITION -> " + ";
-            case Engine.SUBTRACTION -> " - ";
-            case Engine.MULTIPLICATION -> " * ";
+            case ADDITION -> " + ";
+            case SUBTRACTION -> " - ";
+            case MULTIPLICATION -> " * ";
             default -> "";
         };
     }

@@ -1,6 +1,10 @@
 package hexlet.code;
 
 public class Progression {
+    private static final int MIN_PROGRESS_LENGTH = 6;
+    private static final int MAX_PROGRESS_LENGTH = 15;
+
+
     public static String getQuestion() {
         return "What number is missing in the progression?";
     }
@@ -8,8 +12,8 @@ public class Progression {
         Object[][] numbers = new Object[Engine.getGameLength()][2];
         for (var i = 0; i < Engine.getGameLength(); i++) {
 
-            int[] progression = new int[Engine.randomNumber(Engine.getMinProgressLength(),
-                    Engine.getMaxProgressLength())];
+            int[] progression = new int[Engine.randomNumber(MIN_PROGRESS_LENGTH,
+                    MAX_PROGRESS_LENGTH)];
             int firstNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
             int progressionNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
             progression[0] = firstNumber;

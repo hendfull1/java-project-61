@@ -54,23 +54,5 @@ public class Engine {
     public static int getMaxGenerate() {
         return MAX_GENERATE;
     }
-    private static final int OPERATIONS_COUNT = 4;
-    public static int getOperationsCount() {
-        return OPERATIONS_COUNT;
-    }
-    private static final int MIN_PROGRESS_LENGTH = 6;
-    public static int getMinProgressLength() {
-        return MIN_PROGRESS_LENGTH;
-    }
-    private static final int MAX_PROGRESS_LENGTH = 15;
-    public static int getMaxProgressLength() {
-        return MAX_PROGRESS_LENGTH;
-    }
     //идентификатор сложения
-    public static final int ADDITION = 1;
-    //идентификатор вычитания
-    public static final int SUBTRACTION = 2;
-    //идентификатор умножения
-    public static final int MULTIPLICATION = 3;
-
 }
