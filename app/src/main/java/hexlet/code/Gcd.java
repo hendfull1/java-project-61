@@ -20,24 +20,19 @@ public class Gcd {
             return firstNumber;
         }
     }
+
+    public static String getQuestion() {
+        return "Find the greatest common divisor of given numbers.";
+    }
+
     public static void gameGcd() {
-        var name = Cli.getName();
-        System.out.println("Find the greatest common divisor of given numbers.");
+        Object[][] GcdArrays = new Object[Engine.getGameLength()][2];
         for (var i = 0; i < Engine.getGameLength(); i++) {
             int firstNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
             int secondNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
-            int trueAnswer = Gcd.gcd(firstNumber, secondNumber);
-            System.out.println("Question: " + firstNumber + " " + secondNumber);
-            System.out.print("Your answer: ");
-            int answer = Engine.getUserInputInt();
-            if (answer == trueAnswer) {
-                System.out.println("Correct");
-            } else {
-                System.out.println(answer + " is wrong answer ;(. Correct answer was " + trueAnswer);
-                System.out.println("Let's try again, " + name + "!");
-                System.exit(0);
+            GcdArrays[i][0] = firstNumber + " " + secondNumber;
+            GcdArrays[i][1] = gcd(firstNumber, secondNumber);
             }
-        }
-        System.out.println("Congratulations, " + name + "!");
+        Engine.game(GcdArrays, getQuestion());
     }
 }

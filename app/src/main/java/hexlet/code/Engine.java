@@ -18,6 +18,33 @@ public class Engine {
         return SCANNER.nextInt();
     }
 
+    public static void game(Object[][] numbers, String question) {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = getUserInput();
+        System.out.println("Hello, " + userName + "!");
+        System.out.println(question);
+        for (var i = 0; i < GAME_LENGTH; i++) {
+            System.out.println(numbers[i][0]);
+            Object answer;
+            if (numbers[i][1].getClass().equals(String.class)) {
+                System.out.print("Your answer: ");
+                answer = getUserInput();
+            } else {
+                System.out.print("Your answer: ");
+                answer = Integer.parseInt(getUserInput());
+            }
+            if (answer.equals(numbers[i][1])){
+                System.out.println("Correct!");
+            } else {
+                System.out.println(answer + " is wrong answer ;(. Correct answer was " + numbers[i][1]);
+                System.out.println("Let's try again, " + userName + "!");
+                System.exit(0);
+            }
+        }
+        System.out.println("Congratulations, " + userName + "!");
+    }
+
     private static final int GAME_LENGTH = 3;
     public static int getGameLength() {
         return GAME_LENGTH;

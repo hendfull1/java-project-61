@@ -1,11 +1,9 @@
-setup: clean build run-dist
-build:
-	./gradlew installDist
+setup: install run-dist
 clean:
 	./gradlew clean
-# не уверен что тут правильно понял с командой install
+build:
+	./gradlew clean build
 install:
-	sudo apt-get update
-	sudo apt-get install -y openjdk-11-jdk
+	./gradlew clean install
 run-dist:
 	./build/install/app/bin/app

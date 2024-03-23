@@ -1,41 +1,37 @@
 package hexlet.code;
-
 public class Calc {
-    public static void gameCalc() {
-        var name = Cli.getName();
-        System.out.println("What is the result of the expression?");
+    public static String getOperation() {
+        int operation = Engine.randomNumber(Engine.getMinGenerate(), Engine.getOperationsCount());
+        return switch (operation) {
+            case Engine.ADDITION -> " + ";
+            case Engine.SUBTRACTION -> " - ";
+            case Engine.MULTIPLICATION -> " * ";
+            default -> "";
+        };
+    }
+    public static int calcResult(int firstNumber, int secondNumber, String operation) {
+        return switch (operation.trim()) {
+            case "+" -> firstNumber + secondNumber;
+            case "-" -> firstNumber - secondNumber;
+            case "*" -> firstNumber * secondNumber;
+            default -> 0;
+        };
+    }
 
+    public static String getQuestion() {
+        return "What is the result of the expression?";
+    }
+
+    public static void gameCalc() {
+        Object[][] numbers = new Object[Engine.getGameLength()][2];
         for (int i = 0; i < Engine.getGameLength(); i++) {
             int firstNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
             int secondNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
-            int trueAnswer = 0;
-            int operation = Engine.randomNumber(Engine.getMinGenerate(), Engine.getOperationsCount());
-            String operationSymbol = switch (operation) {
-                case Engine.ADDITION -> {
-                    trueAnswer = firstNumber + secondNumber;
-                    yield " + ";
-                }
-                case Engine.SUBTRACTION -> {
-                    trueAnswer = firstNumber - secondNumber;
-                    yield " - ";
-                }
-                case Engine.MULTIPLICATION -> {
-                    trueAnswer = firstNumber * secondNumber;
-                    yield " * ";
-                }
-                default -> "";
-            };
-            System.out.println("Question: " + firstNumber + operationSymbol + secondNumber);
-            System.out.print("Your answer: ");
-            int answer = Engine.getUserInputInt();
-            if (answer == trueAnswer) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println(answer + " is wrong answer ;(. Correct answer was " + trueAnswer);
-                System.out.println("Let's try again, " + name + "!");
-                System.exit(0);
-            }
+            String operation = getOperation();
+            numbers[i][0] = firstNumber + operation + secondNumber;
+            numbers[i][1] = calcResult(firstNumber, secondNumber, operation);
         }
-        System.out.println("Congratulations, " + name + "!");
+        Engine.game(numbers, getQuestion());
     }
 }
+
