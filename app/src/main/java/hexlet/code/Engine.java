@@ -4,21 +4,16 @@ import java.util.Scanner;
 public class Engine {
 
     private static final Random RANDOM = new Random();
-    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static int randomNumber(int min, int max) {
         return RANDOM.nextInt(max - min) + min;
     }
 
-    public static String getUserInput() {
-        return SCANNER.nextLine();
-    }
-
-
     public static void game(Object[][] numbers, String question) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        String userName = getUserInput();
+        String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(question);
         for (var i = 0; i < GAME_LENGTH; i++) {
@@ -27,10 +22,10 @@ public class Engine {
             Object answer;
             if (numbers[i][1].getClass().equals(String.class)) {
                 System.out.print("Your answer: ");
-                answer = getUserInput();
+                answer = scanner.next();
             } else {
                 System.out.print("Your answer: ");
-                answer = Integer.parseInt(getUserInput());
+                answer = Integer.parseInt(scanner.next());
             }
             if (answer.equals(numbers[i][1])) {
                 System.out.println("Correct!");
@@ -41,6 +36,7 @@ public class Engine {
             }
         }
         System.out.println("Congratulations, " + userName + "!");
+        scanner.close();
     }
 
     private static final int GAME_LENGTH = 3;
