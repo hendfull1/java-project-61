@@ -22,6 +22,7 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(question);
         for (var i = 0; i < GAME_LENGTH; i++) {
+            System.out.print("Question: ");
             System.out.println(numbers[i][0]);
             Object answer;
             if (numbers[i][1].getClass().equals(String.class)) {
