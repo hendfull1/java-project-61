@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 public class Gcd {
     public static int gcd(int firstNumber, int secondNumber) {

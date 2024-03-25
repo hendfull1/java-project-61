@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 public class Progression {
     private static final int MIN_PROGRESS_LENGTH = 6;
