@@ -1,3 +1,8 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/289faaaef7f20dcc705f/maintainability)](https://codeclimate.com/github/hendfull1/java-project-61/maintainability)
+
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/hendfull1/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/hendfull1/java-project-61/actions)
+
 <h1> Игры разума</h1>
 <p>Проект включает в себя 5 различных мини игр, в каждй из которых задается 3 вопроса, чтобы победить необходимо ответить правильно на все 3 вопроса, при неправильном ответе на один из них необходимо начинать сначала. Более подробно о каждой игре:</p>
 <h2>Четное/Нечетное</h2>
@@ -23,8 +28,3 @@
 Аскинема - Прогрессия</p>
 <p>https://asciinema.org/a/5zL4dd5UJf1UT1T3f41ME0574
 Аскинема - Простое ли число</p>
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/289faaaef7f20dcc705f/maintainability)](https://codeclimate.com/github/hendfull1/java-project-61/maintainability)
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/hendfull1/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/hendfull1/java-project-61/actions)
