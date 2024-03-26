@@ -17,9 +17,9 @@ public class IsPrime {
         return "yes";
     }
     public static void gamePrime() {
-        String[][] numbers = new String[Engine.getGameLength()][2];
-        for (var i = 0; i < Engine.getGameLength(); i++) {
-            numbers[i][0] = Integer.toString(Utils.randomNumber(Utils.MIN_GENERATE, Utils.MIN_GENERATE));
+        String[][] numbers = new String[Engine.GAME_LENGTH][2];
+        for (var i = 0; i < Engine.GAME_LENGTH; i++) {
+            numbers[i][0] = Integer.toString(Utils.randomNumber(Utils.MIN_GENERATE, Utils.MAX_GENERATE));
             numbers[i][1] = IsPrime.isPrime(Integer.parseInt(numbers[i][0]));
         }
         Engine.game(numbers, getQuestion());

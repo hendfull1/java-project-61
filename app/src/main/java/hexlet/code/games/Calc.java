@@ -18,9 +18,9 @@ public class Calc {
     }
 
     public static void gameCalc() {
-        String[][] numbers = new String[Engine.getGameLength()][2];
+        String[][] numbers = new String[Engine.GAME_LENGTH][2];
         final char[] operators = {'+', '-', '*'};
-        for (int i = 0; i < Engine.getGameLength(); i++) {
+        for (int i = 0; i < Engine.GAME_LENGTH; i++) {
             int operationIndex = Utils.randomNumber(Utils.MIN_GENERATE, operators.length);
             var operator = operators[operationIndex];
             int firstNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MAX_GENERATE);

@@ -9,16 +9,16 @@ public class Engine {
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(question);
-        for (var i = 0; i < GAME_LENGTH; i++) {
+        for (var number : numbers) {
             System.out.print("Question: ");
-            System.out.println(numbers[i][0]);
-            Object answer;
+            System.out.println(number[0]);
+            String answer;
             System.out.print("Your answer: ");
             answer = scanner.next();
-            if (answer.equals(numbers[i][1])) {
+            if (answer.equals(number[1])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println(answer + " is wrong answer ;(. Correct answer was " + numbers[i][1]);
+                System.out.println(answer + " is wrong answer ;(. Correct answer was " + number[1]);
                 System.out.println("Let's try again, " + userName + "!");
                 System.exit(0);
             }
@@ -27,8 +27,6 @@ public class Engine {
         scanner.close();
     }
 
-    private static final int GAME_LENGTH = 3;
-    public static int getGameLength() {
-        return GAME_LENGTH;
-    }
+    public static final int GAME_LENGTH = 3;
+
 }
