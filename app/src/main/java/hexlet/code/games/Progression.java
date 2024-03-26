@@ -13,7 +13,7 @@ public class Progression {
     }
     public static void gameProgression() {
         String[][] numbers = new String[Engine.GAME_LENGTH][2];
-        for (var i = 0; i < Engine.GAME_LENGTH; i++) {
+        for (var number : numbers) {
 
             int[] progression = new int[Utils.randomNumber(MIN_PROGRESS_LENGTH,
                     MAX_PROGRESS_LENGTH)];
@@ -36,8 +36,8 @@ public class Progression {
             progressionString[numberMissed] = "..";
             String progressionOutput = String.join(", ", progressionString);
             progressionOutput = progressionOutput.replace(",", "");
-            numbers[i][0] = progressionOutput;
-            numbers[i][1] = Integer.toString(correctNumber);
+            number[0] = progressionOutput;
+            number[1] = Integer.toString(correctNumber);
         }
         Engine.game(numbers, getQuestion());
     }

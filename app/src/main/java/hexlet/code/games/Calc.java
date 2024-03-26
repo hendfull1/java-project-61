@@ -20,13 +20,13 @@ public class Calc {
     public static void gameCalc() {
         String[][] numbers = new String[Engine.GAME_LENGTH][2];
         final char[] operators = {'+', '-', '*'};
-        for (int i = 0; i < Engine.GAME_LENGTH; i++) {
-            int operationIndex = Utils.randomNumber(Utils.MIN_GENERATE, operators.length);
+        for (var number : numbers) {
+            int operationIndex = Utils.randomNumber(0, operators.length);
             var operator = operators[operationIndex];
             int firstNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MAX_GENERATE);
             int secondNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MAX_GENERATE);
-            numbers[i][0] = firstNumber + " " + operator + " " + secondNumber;
-            numbers[i][1] = Integer.toString(calcResult(firstNumber, secondNumber, operators[operationIndex]));
+            number[0] = firstNumber + " " + operator + " " + secondNumber;
+            number[1] = Integer.toString(calcResult(firstNumber, secondNumber, operators[operationIndex]));
         }
         Engine.game(numbers, getQuestion());
     }
