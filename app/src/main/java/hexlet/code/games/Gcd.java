@@ -18,12 +18,12 @@ public class Gcd {
     }
 
     public static void gameGcd() {
-        Object[][] gcdArrays = new Object[Engine.getGameLength()][2];
+        String[][] gcdArrays = new String[Engine.getGameLength()][2];
         for (var i = 0; i < Engine.getGameLength(); i++) {
-            int firstNumber = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
-            int secondNumber = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
+            int firstNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MIN_GENERATE);
+            int secondNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MIN_GENERATE);
             gcdArrays[i][0] = firstNumber + " " + secondNumber;
-            gcdArrays[i][1] = gcd(firstNumber, secondNumber);
+            gcdArrays[i][1] = Integer.toString(gcd(firstNumber, secondNumber));
         }
         Engine.game(gcdArrays, getQuestion());
     }

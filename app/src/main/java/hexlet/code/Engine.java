@@ -2,7 +2,7 @@ package hexlet.code;
 import java.util.Scanner;
 public class Engine {
 
-    public static void game(Object[][] numbers, String question) {
+    public static void game(String[][] numbers, String question) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -13,13 +13,8 @@ public class Engine {
             System.out.print("Question: ");
             System.out.println(numbers[i][0]);
             Object answer;
-            if (numbers[i][1].getClass().equals(String.class)) {
-                System.out.print("Your answer: ");
-                answer = scanner.next();
-            } else {
-                System.out.print("Your answer: ");
-                answer = Integer.parseInt(scanner.next());
-            }
+            System.out.print("Your answer: ");
+            answer = scanner.next();
             if (answer.equals(numbers[i][1])) {
                 System.out.println("Correct!");
             } else {

@@ -12,13 +12,13 @@ public class Progression {
         return "What number is missing in the progression?";
     }
     public static void gameProgression() {
-        Object[][] numbers = new Object[Engine.getGameLength()][2];
+        String[][] numbers = new String[Engine.getGameLength()][2];
         for (var i = 0; i < Engine.getGameLength(); i++) {
 
             int[] progression = new int[Utils.randomNumber(MIN_PROGRESS_LENGTH,
                     MAX_PROGRESS_LENGTH)];
-            int firstNumber = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
-            int progressionNumber = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
+            int firstNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MIN_GENERATE);
+            int progressionNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MIN_GENERATE);
             progression[0] = firstNumber;
 
             for (var j = 1; j < progression.length; j++) {
@@ -37,7 +37,7 @@ public class Progression {
             String progressionOutput = String.join(", ", progressionString);
             progressionOutput = progressionOutput.replace(",", "");
             numbers[i][0] = progressionOutput;
-            numbers[i][1] = correctNumber;
+            numbers[i][1] = Integer.toString(correctNumber);
         }
         Engine.game(numbers, getQuestion());
     }

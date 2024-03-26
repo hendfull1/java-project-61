@@ -18,15 +18,15 @@ public class Calc {
     }
 
     public static void gameCalc() {
-        Object[][] numbers = new Object[Engine.getGameLength()][2];
+        String[][] numbers = new String[Engine.getGameLength()][2];
         final char[] operators = {'+', '-', '*'};
         for (int i = 0; i < Engine.getGameLength(); i++) {
-            int operationIndex = Utils.randomNumber(Utils.getMinGenerate(), operators.length);
+            int operationIndex = Utils.randomNumber(Utils.MIN_GENERATE, operators.length);
             var operator = operators[operationIndex];
-            int firstNumber = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
-            int secondNumber = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
+            int firstNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MAX_GENERATE);
+            int secondNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MAX_GENERATE);
             numbers[i][0] = firstNumber + " " + operator + " " + secondNumber;
-            numbers[i][1] = calcResult(firstNumber, secondNumber, operators[operationIndex]);
+            numbers[i][1] = Integer.toString(calcResult(firstNumber, secondNumber, operators[operationIndex]));
         }
         Engine.game(numbers, getQuestion());
     }
