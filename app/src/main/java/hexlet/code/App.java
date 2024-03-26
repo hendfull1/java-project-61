@@ -1,8 +1,8 @@
 package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Gcd;
-import hexlet.code.games.IsEven;
-import hexlet.code.games.IsPrime;
+import hexlet.code.games.Even;
+import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
 import java.util.Scanner;
@@ -34,7 +34,7 @@ public class App {
                 Cli.cli();
                 break;
             case EVEN:
-                IsEven.gameIsEven();
+                Even.gameIsEven();
                 break;
             case CALC:
                 Calc.gameCalc();
@@ -46,7 +46,7 @@ public class App {
                 Progression.gameProgression();
                 break;
             case PRIME:
-                IsPrime.gamePrime();
+                Prime.gamePrime();
                 break;
             case 0:
                 break;

@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-public class IsPrime {
+public class Prime {
 
     public static String getQuestion() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -20,7 +20,7 @@ public class IsPrime {
         String[][] numbers = new String[Engine.GAME_LENGTH][2];
         for (var i = 0; i < Engine.GAME_LENGTH; i++) {
             numbers[i][0] = Integer.toString(Utils.randomNumber(Utils.MIN_GENERATE, Utils.MAX_GENERATE));
-            numbers[i][1] = IsPrime.isPrime(Integer.parseInt(numbers[i][0]));
+            numbers[i][1] = Prime.isPrime(Integer.parseInt(numbers[i][0]));
         }
         Engine.game(numbers, getQuestion());
     }
