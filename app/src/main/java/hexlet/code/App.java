@@ -1,5 +1,9 @@
 package hexlet.code;
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Gcd;
+import hexlet.code.games.IsEven;
+import hexlet.code.games.IsPrime;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -43,6 +47,8 @@ public class App {
                 break;
             case PRIME:
                 IsPrime.gamePrime();
+                break;
+            default:
                 break;
         }
     }

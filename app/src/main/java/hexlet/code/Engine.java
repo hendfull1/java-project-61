@@ -3,12 +3,6 @@ import java.util.Random;
 import java.util.Scanner;
 public class Engine {
 
-    private static final Random RANDOM = new Random();
-
-    public static int randomNumber(int min, int max) {
-        return RANDOM.nextInt(max - min) + min;
-    }
-
     public static void game(Object[][] numbers, String question) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
@@ -43,13 +37,4 @@ public class Engine {
     public static int getGameLength() {
         return GAME_LENGTH;
     }
-    private static final int MIN_GENERATE = 1;
-    public static int getMinGenerate() {
-        return MIN_GENERATE;
-    }
-    private static final int MAX_GENERATE = 100;
-    public static int getMaxGenerate() {
-        return MAX_GENERATE;
-    }
-    //идентификатор сложения
 }

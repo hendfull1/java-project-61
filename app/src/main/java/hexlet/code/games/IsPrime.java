@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class IsPrime {
 
@@ -18,7 +19,7 @@ public class IsPrime {
     public static void gamePrime() {
         Object[][] numbers = new Object[Engine.getGameLength()][2];
         for (var i = 0; i < Engine.getGameLength(); i++) {
-            numbers[i][0] = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
+            numbers[i][0] = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
             numbers[i][1] = IsPrime.isPrime((Integer) numbers[i][0]);
         }
         Engine.game(numbers, getQuestion());

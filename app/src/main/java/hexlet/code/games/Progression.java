@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Progression {
     private static final int MIN_PROGRESS_LENGTH = 6;
@@ -14,17 +15,17 @@ public class Progression {
         Object[][] numbers = new Object[Engine.getGameLength()][2];
         for (var i = 0; i < Engine.getGameLength(); i++) {
 
-            int[] progression = new int[Engine.randomNumber(MIN_PROGRESS_LENGTH,
+            int[] progression = new int[Utils.randomNumber(MIN_PROGRESS_LENGTH,
                     MAX_PROGRESS_LENGTH)];
-            int firstNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
-            int progressionNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
+            int firstNumber = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
+            int progressionNumber = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
             progression[0] = firstNumber;
 
             for (var j = 1; j < progression.length; j++) {
                 progression[j] = progression[j - 1] + progressionNumber;
             }
 
-            int numberMissed = Engine.randomNumber(0, progression.length - 1);
+            int numberMissed = Utils.randomNumber(0, progression.length - 1);
             int correctNumber = progression[numberMissed];
             String[] progressionString = new String[progression.length];
 

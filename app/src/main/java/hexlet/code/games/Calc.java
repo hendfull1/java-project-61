@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
 
@@ -12,7 +13,7 @@ public class Calc {
     public static final int MULTIPLICATION = 3;
     private static final int OPERATIONS_COUNT = 4;
     public static String getOperation() {
-        int operation = Engine.randomNumber(Engine.getMinGenerate(), OPERATIONS_COUNT);
+        int operation = Utils.randomNumber(Utils.getMinGenerate(), OPERATIONS_COUNT);
         return switch (operation) {
             case ADDITION -> " + ";
             case SUBTRACTION -> " - ";
@@ -36,8 +37,8 @@ public class Calc {
     public static void gameCalc() {
         Object[][] numbers = new Object[Engine.getGameLength()][2];
         for (int i = 0; i < Engine.getGameLength(); i++) {
-            int firstNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
-            int secondNumber = Engine.randomNumber(Engine.getMinGenerate(), Engine.getMaxGenerate());
+            int firstNumber = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
+            int secondNumber = Utils.randomNumber(Utils.getMinGenerate(), Utils.getMaxGenerate());
             String operation = getOperation();
             numbers[i][0] = firstNumber + operation + secondNumber;
             numbers[i][1] = calcResult(firstNumber, secondNumber, operation);
