@@ -48,8 +48,10 @@ public class App {
             case PRIME:
                 IsPrime.gamePrime();
                 break;
-            default:
+            case 0:
                 break;
+            default:
+                throw new RuntimeException("Unknown input: " + numberGame);
         }
     }
 }
