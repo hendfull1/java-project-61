@@ -7,6 +7,9 @@ public class Progression {
     private static final int MIN_PROGRESS_LENGTH = 6;
     private static final int MAX_PROGRESS_LENGTH = 15;
 
+    private static final int MIN_GENERATE = 1;
+    private static final int MAX_GENERATE = 100;
+
 
     public static String getQuestion() {
         return "What number is missing in the progression?";
@@ -17,8 +20,8 @@ public class Progression {
 
             int[] progression = new int[Utils.randomNumber(MIN_PROGRESS_LENGTH,
                     MAX_PROGRESS_LENGTH)];
-            int firstNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MAX_GENERATE);
-            int progressionNumber = Utils.randomNumber(Utils.MIN_GENERATE, Utils.MAX_GENERATE);
+            int firstNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
+            int progressionNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
             progression[0] = firstNumber;
 
             for (var j = 1; j < progression.length; j++) {

@@ -12,9 +12,8 @@ public class Engine {
         for (var number : numbers) {
             System.out.print("Question: ");
             System.out.println(number[0]);
-            String answer;
             System.out.print("Your answer: ");
-            answer = scanner.next();
+            String answer = scanner.next();
             if (answer.equals(number[1])) {
                 System.out.println("Correct!");
             } else {
