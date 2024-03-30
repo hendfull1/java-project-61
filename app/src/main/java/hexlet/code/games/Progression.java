@@ -27,7 +27,7 @@ public class Progression {
     public static void gameProgression() {
         String[][] numbers = new String[Engine.GAME_LENGTH][2];
         for (var number : numbers) {
-            int [] progression = getProgression();
+            int[] progression = getProgression();
             int numberMissed = Utils.randomNumber(0, progression.length - 1);
             int correctNumber = progression[numberMissed];
             String[] progressionString = new String[progression.length];
