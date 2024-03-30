@@ -9,28 +9,31 @@ public class Progression {
 
     private static final int MIN_GENERATE = 1;
     private static final int MAX_GENERATE = 100;
-    public final static String QUESTION = "What number is missing in the progression?";
+    public static final String QUESTION = "What number is missing in the progression?";
+
+    public static int[] getProgression() {
+        int[] progression = new int[Utils.randomNumber(MIN_PROGRESS_LENGTH,
+                MAX_PROGRESS_LENGTH)];
+        int firstNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
+        int progressionNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
+        progression[0] = firstNumber;
+
+        for (var i = 1; i < progression.length; i++) {
+            progression[i] = progression[i - 1] + progressionNumber;
+        }
+        return progression;
+    }
 
     public static void gameProgression() {
         String[][] numbers = new String[Engine.GAME_LENGTH][2];
         for (var number : numbers) {
-
-            int[] progression = new int[Utils.randomNumber(MIN_PROGRESS_LENGTH,
-                    MAX_PROGRESS_LENGTH)];
-            int firstNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
-            int progressionNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
-            progression[0] = firstNumber;
-
-            for (var j = 1; j < progression.length; j++) {
-                progression[j] = progression[j - 1] + progressionNumber;
-            }
-
+            int [] progression = getProgression();
             int numberMissed = Utils.randomNumber(0, progression.length - 1);
             int correctNumber = progression[numberMissed];
             String[] progressionString = new String[progression.length];
 
-            for (int l = 0; l < progressionString.length; l++) {
-                progressionString[l] = String.valueOf(progression[l]);
+            for (int i = 0; i < progressionString.length; i++) {
+                progressionString[i] = String.valueOf(progression[i]);
             }
 
             progressionString[numberMissed] = "..";

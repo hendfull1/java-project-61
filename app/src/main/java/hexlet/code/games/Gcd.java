@@ -6,7 +6,7 @@ import hexlet.code.Utils;
 public class Gcd {
     private static final int MIN_GENERATE = 1;
     private static final int MAX_GENERATE = 100;
-    public final static String QUESTION = "Find the greatest common divisor of given numbers.";
+    public static final String QUESTION = "Find the greatest common divisor of given numbers.";
     public static int gcd(int firstNumber, int secondNumber) {
         while (secondNumber != 0) {
             int temp = secondNumber;

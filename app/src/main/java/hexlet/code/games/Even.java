@@ -6,7 +6,7 @@ import hexlet.code.Utils;
 public class Even {
     private static final int MIN_GENERATE = 1;
     private static final int MAX_GENERATE = 100;
-    public final static String QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public static final String QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static void gameIsEven() {
         String[][] numbers = new String[Engine.GAME_LENGTH][2];
         for (var number : numbers) {

@@ -6,7 +6,7 @@ import hexlet.code.Utils;
 public class Calc {
     private static final int MIN_GENERATE = 1;
     private static final int MAX_GENERATE = 100;
-    public final static String QUESTION = "What is the result of the expression?";
+    public static final String QUESTION = "What is the result of the expression?";
     public static int calcResult(int firstNumber, int secondNumber, char operation) {
         return switch (operation) {
             case '+' -> firstNumber + secondNumber;
