@@ -23,11 +23,7 @@ public class Prime {
         String[][] numbers = new String[Engine.GAME_LENGTH][2];
         for (var number : numbers) {
             number[0] = Integer.toString(Utils.randomNumber(MIN_GENERATE, MAX_GENERATE));
-            if (isPrime(Integer.parseInt(number[0])) == Boolean.TRUE) {
-                number[1] = "yes";
-            } else {
-                number[1] = "no";
-            }
+            number[1] = isPrime(Integer.parseInt(number[0])) == Boolean.TRUE ? "yes" : "no";
         }
         Engine.game(numbers, QUESTION);
     }

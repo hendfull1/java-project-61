@@ -11,11 +11,7 @@ public class Even {
         String[][] numbers = new String[Engine.GAME_LENGTH][2];
         for (var number : numbers) {
             number[0] = Integer.toString(Utils.randomNumber(MIN_GENERATE, MAX_GENERATE));
-            if (Integer.parseInt(number[0]) % 2 == 0) {
-                number[1] = "yes";
-            } else {
-                number[1] = "no";
-            }
+            number[1] = Integer.parseInt(number[0]) % 2 == 0 ? "yes" : "no";
         }
         Engine.game(numbers, QUESTION);
     }
