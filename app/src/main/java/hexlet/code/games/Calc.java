@@ -6,7 +6,8 @@ import hexlet.code.Utils;
 public class Calc {
     private static final int MIN_GENERATE = 1;
     private static final int MAX_GENERATE = 100;
-    public static final String QUESTION = "What is the result of the expression?";
+    private static final String QUESTION = "What is the result of the expression?";
+    private static final int GAME_LENGTH = 3;
     public static int calcResult(int firstNumber, int secondNumber, char operation) {
         return switch (operation) {
             case '+' -> firstNumber + secondNumber;
@@ -17,7 +18,7 @@ public class Calc {
     }
 
     public static void gameCalc() {
-        String[][] numbers = new String[Engine.GAME_LENGTH][2];
+        String[][] numbers = new String[GAME_LENGTH][2];
         final char[] operators = {'+', '-', '*'};
         for (var number : numbers) {
             int operationIndex = Utils.randomNumber(0, operators.length);

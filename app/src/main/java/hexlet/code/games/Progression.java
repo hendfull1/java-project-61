@@ -6,10 +6,10 @@ import hexlet.code.Utils;
 public class Progression {
     private static final int MIN_PROGRESS_LENGTH = 6;
     private static final int MAX_PROGRESS_LENGTH = 15;
-
     private static final int MIN_GENERATE = 1;
     private static final int MAX_GENERATE = 100;
-    public static final String QUESTION = "What number is missing in the progression?";
+    private static final int GAME_LENGTH = 3;
+    private static final String QUESTION = "What number is missing in the progression?";
 
     public static int[] getProgression() {
         int[] progression = new int[Utils.randomNumber(MIN_PROGRESS_LENGTH,
@@ -25,7 +25,7 @@ public class Progression {
     }
 
     public static void gameProgression() {
-        String[][] numbers = new String[Engine.GAME_LENGTH][2];
+        String[][] numbers = new String[GAME_LENGTH][2];
         for (var number : numbers) {
             int[] progression = getProgression();
             int numberMissed = Utils.randomNumber(0, progression.length - 1);
