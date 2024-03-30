@@ -6,6 +6,7 @@ import hexlet.code.Utils;
 public class Gcd {
     private static final int MIN_GENERATE = 1;
     private static final int MAX_GENERATE = 100;
+    public final static String QUESTION = "Find the greatest common divisor of given numbers.";
     public static int gcd(int firstNumber, int secondNumber) {
         while (secondNumber != 0) {
             int temp = secondNumber;
@@ -13,10 +14,6 @@ public class Gcd {
             firstNumber = temp;
         }
         return firstNumber;
-    }
-
-    public static String getQuestion() {
-        return "Find the greatest common divisor of given numbers.";
     }
 
     public static void gameGcd() {
@@ -27,6 +24,6 @@ public class Gcd {
             number[0] = firstNumber + " " + secondNumber;
             number[1] = Integer.toString(gcd(firstNumber, secondNumber));
         }
-        Engine.game(numbers, getQuestion());
+        Engine.game(numbers, QUESTION);
     }
 }

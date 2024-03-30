@@ -9,11 +9,8 @@ public class Progression {
 
     private static final int MIN_GENERATE = 1;
     private static final int MAX_GENERATE = 100;
+    public final static String QUESTION = "What number is missing in the progression?";
 
-
-    public static String getQuestion() {
-        return "What number is missing in the progression?";
-    }
     public static void gameProgression() {
         String[][] numbers = new String[Engine.GAME_LENGTH][2];
         for (var number : numbers) {
@@ -42,7 +39,7 @@ public class Progression {
             number[0] = progressionOutput;
             number[1] = Integer.toString(correctNumber);
         }
-        Engine.game(numbers, getQuestion());
+        Engine.game(numbers, QUESTION);
     }
 }
 

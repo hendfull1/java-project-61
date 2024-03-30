@@ -7,10 +7,7 @@ public class Prime {
 
     private static final int MIN_GENERATE = 1;
     private static final int MAX_GENERATE = 100;
-
-    public static String getQuestion() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    }
+    public final static String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
     public static Boolean isPrime(int number) {
         if (number <= 1) {
             return Boolean.FALSE;
@@ -32,6 +29,6 @@ public class Prime {
                 number[1] = "no";
             }
         }
-        Engine.game(numbers, getQuestion());
+        Engine.game(numbers, QUESTION);
     }
 }

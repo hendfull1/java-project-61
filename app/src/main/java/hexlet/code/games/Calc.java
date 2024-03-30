@@ -6,17 +6,14 @@ import hexlet.code.Utils;
 public class Calc {
     private static final int MIN_GENERATE = 1;
     private static final int MAX_GENERATE = 100;
+    public final static String QUESTION = "What is the result of the expression?";
     public static int calcResult(int firstNumber, int secondNumber, char operation) {
         return switch (operation) {
             case '+' -> firstNumber + secondNumber;
             case '-' -> firstNumber - secondNumber;
             case '*' -> firstNumber * secondNumber;
-            default -> 0;
+            default -> throw new RuntimeException("Unknown input: " + operation);
         };
-    }
-
-    public static String getQuestion() {
-        return "What is the result of the expression?";
     }
 
     public static void gameCalc() {
@@ -30,7 +27,7 @@ public class Calc {
             number[0] = firstNumber + " " + operator + " " + secondNumber;
             number[1] = Integer.toString(calcResult(firstNumber, secondNumber, operators[operationIndex]));
         }
-        Engine.game(numbers, getQuestion());
+        Engine.game(numbers, QUESTION);
     }
 }
 
