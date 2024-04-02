@@ -25,8 +25,8 @@ public class Progression {
     }
 
     public static void gameProgression() {
-        String[][] numbers = new String[GAME_LENGTH][2];
-        for (var number : numbers) {
+        String[][] questionsAnswers = new String[GAME_LENGTH][2];
+        for (var questionAnswer : questionsAnswers) {
             int[] progression = getProgression();
             int numberMissed = Utils.randomNumber(0, progression.length - 1);
             int correctNumber = progression[numberMissed];
@@ -39,10 +39,10 @@ public class Progression {
             progressionString[numberMissed] = "..";
             String progressionOutput = String.join(", ", progressionString);
             progressionOutput = progressionOutput.replace(",", "");
-            number[0] = progressionOutput;
-            number[1] = Integer.toString(correctNumber);
+            questionAnswer[0] = progressionOutput;
+            questionAnswer[1] = Integer.toString(correctNumber);
         }
-        Engine.game(numbers, QUESTION);
+        Engine.game(questionsAnswers, QUESTION);
     }
 }
 

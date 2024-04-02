@@ -18,13 +18,13 @@ public class Gcd {
     }
 
     public static void gameGcd() {
-        String[][] numbers = new String[GAME_LENGTH][2];
-        for (var number : numbers) {
+        String[][] questionsAnswers = new String[GAME_LENGTH][2];
+        for (var questionAnswer : questionsAnswers) {
             int firstNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
             int secondNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
-            number[0] = firstNumber + " " + secondNumber;
-            number[1] = Integer.toString(gcd(firstNumber, secondNumber));
+            questionAnswer[0] = firstNumber + " " + secondNumber;
+            questionAnswer[1] = Integer.toString(gcd(firstNumber, secondNumber));
         }
-        Engine.game(numbers, QUESTION);
+        Engine.game(questionsAnswers, QUESTION);
     }
 }

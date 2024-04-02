@@ -21,11 +21,11 @@ public class Prime {
         return Boolean.TRUE;
     }
     public static void gamePrime() {
-        String[][] numbers = new String[GAME_LENGTH][2];
-        for (var number : numbers) {
-            number[0] = Integer.toString(Utils.randomNumber(MIN_GENERATE, MAX_GENERATE));
-            number[1] = isPrime(Integer.parseInt(number[0])) == Boolean.TRUE ? "yes" : "no";
+        String[][] questionsAnswers = new String[GAME_LENGTH][2];
+        for (var questionAnswer : questionsAnswers) {
+            questionAnswer[0] = Integer.toString(Utils.randomNumber(MIN_GENERATE, MAX_GENERATE));
+            questionAnswer[1] = isPrime(Integer.parseInt(questionAnswer[0])) == Boolean.TRUE ? "yes" : "no";
         }
-        Engine.game(numbers, QUESTION);
+        Engine.game(questionsAnswers, QUESTION);
     }
 }

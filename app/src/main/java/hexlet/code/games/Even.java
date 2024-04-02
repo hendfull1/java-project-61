@@ -9,11 +9,11 @@ public class Even {
     private static final String QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static final int GAME_LENGTH = 3;
     public static void gameIsEven() {
-        String[][] numbers = new String[GAME_LENGTH][2];
-        for (var number : numbers) {
-            number[0] = Integer.toString(Utils.randomNumber(MIN_GENERATE, MAX_GENERATE));
-            number[1] = Integer.parseInt(number[0]) % 2 == 0 ? "yes" : "no";
+        String[][] questionsAnswers = new String[GAME_LENGTH][2];
+        for (var questionAnswer : questionsAnswers) {
+            questionAnswer[0] = Integer.toString(Utils.randomNumber(MIN_GENERATE, MAX_GENERATE));
+            questionAnswer[1] = Integer.parseInt(questionAnswer[0]) % 2 == 0 ? "yes" : "no";
         }
-        Engine.game(numbers, QUESTION);
+        Engine.game(questionsAnswers, QUESTION);
     }
 }
