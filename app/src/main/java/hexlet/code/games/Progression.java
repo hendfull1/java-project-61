@@ -30,8 +30,7 @@ public class Progression {
             int numberMissed = Utils.randomNumber(0, progression.length - 1);
             String correctNumber = progression[numberMissed];
             progression[numberMissed] = "..";
-            String progressionOutput = String.join(", ", progression);
-            progressionOutput = progressionOutput.replace(",", "");
+            String progressionOutput = String.join(" ", progression);
             questionAnswer[0] = progressionOutput;
             questionAnswer[1] = correctNumber;
         }
