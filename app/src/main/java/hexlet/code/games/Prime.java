@@ -9,7 +9,7 @@ public class Prime {
     private static final int MAX_GENERATE = 100;
     private static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private static final int GAME_LENGTH = 3;
-    public static Boolean isPrime(int number) {
+    public static boolean isPrime(int number) {
         if (number <= 1) {
             return Boolean.FALSE;
         }
