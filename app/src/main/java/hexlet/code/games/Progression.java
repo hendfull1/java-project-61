@@ -11,15 +11,11 @@ public class Progression {
     private static final int GAME_LENGTH = 3;
     private static final String QUESTION = "What number is missing in the progression?";
 
-    public static int[] getProgression() {
-        int[] progression = new int[Utils.randomNumber(MIN_PROGRESS_LENGTH,
-                MAX_PROGRESS_LENGTH)];
-        int firstNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
-        int progressionNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
-        progression[0] = firstNumber;
+    public static String[] getProgression(int first, int step, int length) {
+        String[] progression = new String[length];
 
-        for (var i = 1; i < progression.length; i++) {
-            progression[i] = progression[i - 1] + progressionNumber;
+        for (int i = 0; i < length; i += 1) {
+            progression[i] = Integer.toString(first + i * step);
         }
         return progression;
     }
@@ -27,20 +23,17 @@ public class Progression {
     public static void gameProgression() {
         String[][] questionsAnswers = new String[GAME_LENGTH][2];
         for (var questionAnswer : questionsAnswers) {
-            int[] progression = getProgression();
+            int firstNumber = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
+            int step = Utils.randomNumber(MIN_GENERATE, MAX_GENERATE);
+            int length = Utils.randomNumber(MIN_PROGRESS_LENGTH, MAX_PROGRESS_LENGTH);
+            String[] progression = getProgression(firstNumber, step, length);
             int numberMissed = Utils.randomNumber(0, progression.length - 1);
-            int correctNumber = progression[numberMissed];
-            String[] progressionString = new String[progression.length];
-
-            for (int i = 0; i < progressionString.length; i++) {
-                progressionString[i] = String.valueOf(progression[i]);
-            }
-
-            progressionString[numberMissed] = "..";
-            String progressionOutput = String.join(", ", progressionString);
+            String correctNumber = progression[numberMissed];
+            progression[numberMissed] = "..";
+            String progressionOutput = String.join(", ", progression);
             progressionOutput = progressionOutput.replace(",", "");
             questionAnswer[0] = progressionOutput;
-            questionAnswer[1] = Integer.toString(correctNumber);
+            questionAnswer[1] = correctNumber;
         }
         Engine.game(questionsAnswers, QUESTION);
     }
